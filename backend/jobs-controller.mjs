@@ -8,6 +8,13 @@ const PORT = process.env.PORT;
 const app = express();
 app.use(express.json());  // REST needs JSON MIME type.
 
+app.use(cors(
+    {
+        origin: ["https://portfolio-website-api.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 
 // CREATE controller ******************************************
 app.post ('/jobs', (req,res) => { 
