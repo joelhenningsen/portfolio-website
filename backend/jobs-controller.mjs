@@ -4,7 +4,9 @@ import 'dotenv/config';
 import express from 'express';
 import * as jobs from './jobs-model.mjs';
 
-const PORT = process.env.PORT;
+// Port for when using locally
+// const PORT = process.env.PORT;
+
 const app = express();
 app.use(express.json());  // REST needs JSON MIME type.
 
@@ -106,7 +108,7 @@ app.delete('/jobs/:_id', (req, res) => {
         });
 });
 
-
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}...`);
-});
+// Listening log for when running locally
+// app.listen(PORT, () => {
+//     console.log(`Server listening on port ${PORT}...`);
+// });
