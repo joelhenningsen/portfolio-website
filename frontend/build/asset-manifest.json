@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bc5b113e.css",
+    "main.js": "/static/js/main.c43de369.js",
+    "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
+    "static/media/sheep-field-iceland.jpg": "/static/media/sheep-field-iceland.5529f17a8234027bf6d7.jpg",
+    "index.html": "/index.html",
+    "main.bc5b113e.css.map": "/static/css/main.bc5b113e.css.map",
+    "main.c43de369.js.map": "/static/js/main.c43de369.js.map",
+    "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bc5b113e.css",
+    "static/js/main.c43de369.js"
+  ]
+}
