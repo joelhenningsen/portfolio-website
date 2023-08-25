@@ -12,7 +12,7 @@ app.use(express.json());  // REST needs JSON MIME type.
 
 app.use(cors(
     {
-        origin: ["https://joelhenningsen-backend.vercel.app/"],
+        origin: ["https://joelhenningsen.vercel.app/"],
         methods: ["POST", "GET"],
         credentials: true
     }
