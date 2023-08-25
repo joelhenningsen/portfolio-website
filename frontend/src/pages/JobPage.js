@@ -1,60 +1,49 @@
-import { React, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'; // Import Axios
 
 import JobList from '../components/JobList';
 
 function JobsPage({ setJob }) {
-    // Use the Navigate for redirection
     const redirect = useNavigate();
-
-    // Use state to bring in the data
     const [jobs, setJobs] = useState([]);
 
-    // RETRIEVE the entire list of jobs
     const loadJobs = async () => {
-        const response = await fetch('/jobs');
-        const unformattedJobs = await response.json();
-
-        const formattedJobs = unformattedJobs.map(job => ({
-            ...job,
-            startDate: job.startDate.slice(0, 10),
-            endDate: job.endDate.slice(0, 10)
-        }));
-
-        setJobs(formattedJobs);
+        try {
+            const response = await axios.get('https://joelhenningsen-backend.vercel.app/jobs'); // Replace with your backend URL
+            const formattedJobs = response.data.map(job => ({
+                ...job,
+                startDate: job.startDate.slice(0, 10),
+                endDate: job.endDate.slice(0, 10)
+            }));
+            setJobs(formattedJobs);
+        } catch (error) {
+            console.error('Error loading jobs:', error);
+        }
     } 
-    
 
-    // UPDATE a single job
     const onEditJob = async job => {
         setJob(job);
         redirect("/update");
     }
 
-
-    // DELETE a single job  
     const onDeleteJob = async _id => {
-        const response = await fetch(`/jobs/${_id}`, { method: 'DELETE' });
-        if (response.status === 200) {
-            const getResponse = await fetch('/jobs');
-            const jobs = await getResponse.json();
-            setJobs(jobs);
-        } else {
-            console.error(`error deleting job = ${_id}, status code = ${response.status}`)
+        try {
+            await axios.delete(`https://joelhenningsen-backend.vercel.app/jobs/${_id}`); // Replace with your backend URL
+            loadJobs(); // Refresh the job list after deletion
+        } catch (error) {
+            console.error(`Error deleting job ${_id}:`, error);
         }
     }
 
-    // ADD a single job
     const onAddJob = () => {
         redirect("/create")
     };
 
-    // LOAD all the jobs
     useEffect(() => {
         loadJobs();
     }, []);
 
-    // DISPLAY the jobs
     return (
         <>
             <h2>My Job Portfolio</h2>

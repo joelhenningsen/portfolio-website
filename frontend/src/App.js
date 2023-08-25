@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import './App.css';
 
+// Import Axios
+import axios from 'axios'
+
 // Import Pages
 import JobsPage from './pages/JobPage';
 import AddJobPageForm from './pages/AddJobPageForm';
