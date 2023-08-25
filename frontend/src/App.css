@@ -1,0 +1,358 @@
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+
+/*   ----- Imports  -----  */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Slab:wght@500;700&display=swap');
+ 
+  
+/* @import 'node_modules/modern-normalize/modern-normalize.css'; */
+      /* npm install modern-normalize
+        Resets elements for browser consistency.  
+        https://www.npmjs.com/package/modern-normalize
+      */         
+
+/* Component-specific stylesheets, if any. 
+  @import "component1.css";   
+*/
+
+/*   ----- Variables  -----  */
+:root {
+  --skyBlue: rgba(93, 113, 140, .8);
+  --lightBlue: rgba(167, 177, 186);
+  --pineGreen: rgba(54, 66, 47, .9);
+  --deepForest: rgba(36, 34, 9);
+  --warmGlow: rgba(140, 96, 58);
+  --sandy: rgba(217, 201, 186, .8);
+  --veryLight: rgba(255, 234, 215, 0.597);
+  /* --custom-embellishment-name:; */
+}
+
+/*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+body {       /* Can alternatively define in html {} or :root {} */
+  background-image: url("images/sheep-field-iceland.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top left;
+  background-repeat: no-repeat;
+  color: var(--deepForest);
+  font-family: 'Lato', sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 90%;
+}
+
+ /* ----- Page layout blocks -----  */
+header {
+  background-color: var(--skyBlue);
+  color: var(--sandy);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+header img {
+  width: 80px;
+  max-width: 15%;
+  height: auto;
+  margin: 0;
+  padding: 0px 0px 10px 0px;
+}
+
+main {
+  background-color: var(--sandy);
+  margin: 0;
+  padding: 0px 20px 0px 20px;
+  border: 5px solid var(--sandy)
+}
+/* section {}
+  article {}
+    #topic1 {}
+    #topic2 {}
+div {}
+aside {} */
+footer {
+  background-color: var(--pineGreen);
+  color: var(--sandy);
+  /* margin: 20px 0px; */
+  padding: 10px;
+  /* border: 5px solid var(--sandy) */
+}
+
+/* ----- Anchors ----- Text links */
+/* a {}
+a:link {}
+a:hover {}
+a:active {}
+a:visited {} */
+
+/*  ----- Navigation ----- Override text links for navigation only.  */
+nav {
+  display: flex;
+  background-color: var(--skyBlue);
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 10px;
+  
+}
+nav a {
+  text-decoration: none;
+  color: var(--lightBlue);
+  background-color: var(--pineGreen);
+  margin: 2px;
+  padding: 2% 5%;
+  /* border: 2px solid var(--deepForest); */
+  border-radius: 10px;
+  width: 25%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+nav a:hover {
+  background-color: var(--deepForest);
+  color: var(--warmGlow);
+}
+
+/* ---- Local Navigation ---- */
+.local {
+  display: flex;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.local a{
+  background-color: var(--deepForest);
+  color: var(--warmGlow);
+  padding: 2% 3%;
+  margin: 2px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem; 
+}
+
+.local a:hover {
+  background-color: var(--pineGreen);
+  color: var(--lightBlue);  
+}
+/*  -----  Typography  ----- */
+/* p {}
+br {}
+ol, ul, dl {}
+li {}
+dt {}
+dd {} */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', serif;
+} 
+/* h1 {}
+h2 {}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+
+abbr {}
+acronym {}
+address {}
+blockquote {}
+  q {}
+  cite {}
+em {}
+hr {}
+mark {}
+s {}
+span {}
+strong {}
+sub {}
+sup {}
+time {} */
+
+/*  ----- Coding or instructional typography ----- */
+/* pre {}
+code {}
+kbd {}
+samp {}
+var {}
+del {} 
+ins {} */
+
+/*  ----- Table ----- */
+table {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding: 0;
+  border: 2px solid var(--pineGreen);
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+}
+caption {
+  margin: 0;
+  padding: 4px;
+  font-size: 100%;
+  font-weight: bold;
+  text-align: left;
+  color: var(--pineGreen);
+}
+/* thead {}
+tbody {}
+tfoot {} */
+/* tr {} */
+  /* tr:nth-child(even) {} */
+th, td {
+  margin: 0;
+  padding: 4px;
+  border: 2px solid var(--pineGreen);
+  color: var(--pineGreen)
+}
+th {
+  color: var(--deepForest)
+}
+  /* td:nth-child(1) {} */
+/* colgroup {}
+data {}
+datalist {} */
+.icon-cell {
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+/*  ----- Form ----- */
+/* form {} */
+fieldset {
+  border: 2px solid var(--warmGlow);
+  margin-bottom: 1%;
+  padding: 1.5%;
+}
+  legend {
+    color: var(--warmGlow);
+    font-size: 120%; 
+    font-weight: bold;
+  }
+label {
+  display: block;
+  margin-top: 1%;
+}
+  button, input, select, textarea {
+    font-family: inherit;
+    padding: .5%;
+    font-size: 100%
+  }
+  button {
+    background-color: var(--veryLight);
+  }  
+
+  input[type="text"], input[type="email"] {
+    width: 100%;
+    max-width: 500px;
+  }
+  textarea {
+    width: 100%;
+    max-width: 800px;
+    height: 250px;
+  }
+
+*:required {
+  border: 1.5px solid green;
+}
+
+label.required:after {
+  content: " *";
+  color: red;
+}
+
+  /* input {}
+  output {}
+  meter {}
+  progress {}
+  select {}
+    optgroup {}
+    option {}
+  textarea {} */
+
+/* ----- Media ----- */
+figure {
+  margin: 10px;
+  padding: 8px;
+  flex-basis: 30%;
+  border: 2px solid var(--deepForest);
+  border-radius: 10px;
+  background-color: var(--sandy);
+  text-align: center;
+  min-width: 300px;
+}
+  figcaption {
+      margin-top: 8px;
+      padding: 0;
+      color: var(--deepForest);
+  }
+  figure img {
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+  }
+/* svg {}
+picture {}
+  source {}
+iframe {}
+video {}
+audio {}
+embed {}
+object {} */
+
+/* React Icons */
+.icon {
+  font-size: 1.5rem;
+}
+
+/*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
+.gallery {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* .floatright {}
+.floatleft {}
+.center-middle {}
+
+.ten {}
+.twenty {}
+.thirty {}
+.forty {}
+.fifty {}
+.sixty {}
+.seventy {}
+.eighty {}
+
+.radius {}
+.circle {}
+.boxshadow {}
+.tshadow {} 
+.gradient {}
+.shape {}  */
+
+/* Wrap for smaller screens */
+@media (max-width: 600px) {
+  nav {
+    flex-wrap: wrap;
+  }
+}
+
+@keyframes App-logo {}
+
+/*   ===== TABLET  media query overrides mobile styles ===== */
+@media all and (min-width: 600px) {}
+
+/*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+@media all and (min-width: 1080px) {}
+
+/*   ===== PRINT  media query overrides previous styles =====  */
+@media print {}

@@ -1,0 +1,94 @@
+### CREATE five documents.
+POST http://localhost:3000/jobs HTTP/1.1
+content-type: application/json
+
+{
+    "company": "Intel",
+    "role": "Procurement Specialist",
+    "hours": 40,
+    "startDate": "2021-10-01",
+    "endDate": "2022-09-31"
+}
+
+
+### CREATE 2
+POST http://localhost:3000/jobs HTTP/1.1
+content-type: application/json
+
+{
+    "company": "Bubble Tea Shop",
+    "role": "Barista",
+    "hours": 20,
+    "startDate": "2023-06-05",
+    "endDate": "2023-07-15"
+}
+
+### CREATE 3
+POST http://localhost:3000/jobs HTTP/1.1
+content-type: application/json
+
+{
+    "company": "Starbucks",
+    "role": "Barista",
+    "hours": 20,
+    "startDate": "2018-12-01",
+    "endDate": "2019-12-31"
+}
+
+### CREATE 4
+POST http://localhost:3000/jobs HTTP/1.1
+content-type: application/json
+
+{
+    "company": "Black Rock Coffee Bar",
+    "role": "Bar Lead",
+    "hours": 30,
+    "startDate": "2018-06-12",
+    "endDate": "2020-12-21"
+}
+
+### CREATE 5
+POST http://localhost:3000/jobs HTTP/1.1
+content-type: application/json
+
+{
+    "company": "Villa Sport Athletic Club",
+    "role": "Housekeeping",
+    "hours": 25,
+    "startDate": "2016-09-26",
+    "endDate": "2017-09-26"
+}
+
+
+### RETRIEVE all documents.
+GET http://localhost:3000/jobs HTTP/1.1
+
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/jobs/64d82a5f0afa4a05601d6269 HTTP/1.1
+
+
+### UPDATE one document's data, by ID.
+### Replace the ID in the following request with one that exists
+### and update it's data:
+PUT http://localhost:3000/jobs/64de490d80f27738a389d453 HTTP/1.1
+content-type: application/json
+
+{
+    "company": "Amazon",
+    "role": "Software Engineer",
+    "hours": 40,
+    "startDate": "2023-08-01",
+    "endDate": "2023-08-12"
+}
+
+### DELETE by ID (responds with nothing if successful):
+DELETE http://localhost:3000/jobs/64d82a5d0afa4a05601d6267 HTTP/1.1
+
+
+
+### RETRIEVE all documents (responds with 4 or the original 5):
+GET http://localhost:3000/jobs HTTP/1.1
+
